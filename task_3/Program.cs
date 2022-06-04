@@ -1,9 +1,9 @@
 ﻿//3. Написать программу, которая в двумерном массиве заменяет строки на столбцы или сообщить, что это невозможно (в случае, если матрица не квадратная).
 
 Console.Clear();
-Console.WriteLine("Введите количество строк Вашего массива: ");
+Console.Write("Введите количество строк Вашего массива: ");
 int numberOfRows = int.Parse(Console.ReadLine()?? "0");
-Console.WriteLine("Введите количество столбцов Вашего массива: ");
+Console.Write("Введите количество столбцов Вашего массива: ");
 int numberOfColumns = int.Parse(Console.ReadLine()?? "0");
 
 
@@ -35,15 +35,8 @@ int[,] changedArray = new int [myFilledArray.GetLength(0), myFilledArray.GetLeng
 
 if (myFilledArray.GetLength(0) == myFilledArray.GetLength(1))
 {   Console.WriteLine("Ваш массив, в котором заменили строки на столбцы:");  
-    for (int i = 0; i < myFilledArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < myFilledArray.GetLength(1); j++)
-        {
-           changedArray[i, j] = myFilledArray[i, j]; // changedArray помещает в себя данные myFilledArray 
-        }
-       
-    }   
-    for (int i = 0; i < myFilledArray.GetLength(0); i++) // заменяем строки на столбцы
+    
+    for (int i = 0; i < myFilledArray.GetLength(0); i++) 
     {
         for (int j = 0; j < myFilledArray.GetLength(1); j++)
         {
@@ -59,6 +52,3 @@ else
     Console.WriteLine("Матрица не квадратная! Заменить строки на столбцы невозможно!");
 }
 Console.WriteLine(); 
-
-
-
